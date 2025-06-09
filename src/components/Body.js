@@ -1,23 +1,37 @@
-import React from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Login from './Login'
+import Login from './Login';
 import Browse from './Browse';
+import Error from './Error';
+import AppLayout from './AppLayout';
 
 const Body = () => {
 
     const appRouter = createBrowserRouter([
         {
-            path:"/",
-            element: <Login />
+            path: '/',
+            element: <Login />,
+            errorElement: <Error />
         },
         {
-            path:"/browse",
-            element: <Browse />
+            path: '/browse',
+            element: <AppLayout />, // wrapper that includes <Header />
+            children: [
+            {
+                path: '',
+                element: <Browse />
+            }
+            ]
         },
-    ])
+        {
+            path: '/error',
+            element: <Error />
+        }
+    ]);
+
+    
 
   return (
-    <div>
+    <div className="h-full">
         <RouterProvider router={appRouter} />
     </div>
   )
