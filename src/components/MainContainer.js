@@ -1,12 +1,18 @@
-import React from 'react'
+import React from 'react';
 import VideoBackground from './VideoBackground'
+import VideoDiscription from './VideoDiscription';
+import { useSelector } from "react-redux";
 
 const MainContainer = () => {
-  const randomIndex = Math.floor(Math.random()*21);
+  const index = Math.floor(Math.random()*21);
+  const movieList = useSelector((state) => state.movies.nowPlayingMovies);
+
+  const mainMovie = Array.isArray(movieList) ? movieList[index] : null;
 
   return (
-    <div>
-        <VideoBackground index={randomIndex} />
+    <div className='relative h-screen'>
+        <VideoBackground mainMovie={mainMovie} />
+        <VideoDiscription mainMovie={mainMovie} />
     </div>
   )
 }

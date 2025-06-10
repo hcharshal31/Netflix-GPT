@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import {useDispatch} from "react-redux";
 import { addMainMovieTrailer } from '../utils/moviesSlice';
 import { API_OPTIONS } from '../utils/Constants';
@@ -15,7 +15,7 @@ const useTrailerVideo = (movie_id) => {
         const trailer = json?.results?.filter((item)=>{
           return item.type === "Trailer";
         });
-
+        
         dispatch(addMainMovieTrailer(trailer));
       } catch (error) {
         console.error("Failed to fetch now playing movies:", error);

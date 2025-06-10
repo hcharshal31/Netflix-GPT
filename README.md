@@ -20,6 +20,13 @@
 - Put the hardcoded values like the image URL's in the constants file(always keep the constants file inside your project)
 - Get TMDB API by Registering on the website.
 - Get Now playing movie data from TMDB API.
+- Created custom hooks for now playing movies and for main movie trailer.
+- Updated the redux store with the data of now playing movies data and trailer video data.
+- Planing for mainContainer and seocndary container.
+- Embedded the you tube video and made it autoplay and mute.
+- Removed the youtube controls from the trailer video.
+- Created the cuctom hooks to Fetch the data for the Top rated, Popular and Upcoming movies from there respective API's.
+- Added the the rows for showing the movie cards of the Top rated, Popular and Upcoming movies.
 
 - Login/Sign Up Page
     - Sign in/ Sign Up form
